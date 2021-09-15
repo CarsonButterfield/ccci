@@ -167,7 +167,7 @@ window.clicked_state = null;
 window.clicked_sector = null;
 
 function build_table(policies) {
-  $( "#sector-tabs" ).css('display', 'block');
+  $( "#sector-tabs" ).css('display', 'flex');
    $( ".table-data" ).remove();
   $( "#state-policies #policies-table" ).append('<tr class="table-data" id="no-results"><td colspan="4"><span>This state has no policies in this sector.</span></td></tr>');
   jQuery.each( policies, function( i, val ) {
@@ -217,10 +217,10 @@ function about_tab(state) {
 	var target_info_1 = csv.states[state]['goals'][0]['Target_Info_1'];
 	var target_date_2 = csv.states[state]['goals'][0]['Target_Date_2'];
 	var target_info_2 = csv.states[state]['goals'][0]['Target_Info_2'];
-	if(target_date_1 == null) {date_1 = "";} else {date_1 = '<h3>2020-2030 TARGET</h3><p>'  + target_info_1;}
-	if(target_date_2 == null) {date_2 = "";} else {date_2 = '<h3>POST 2030</h3><p>'  + target_info_2;}
+	if(target_date_1 == null) {date_1 = "";} else {date_1 = '<h3 class="target-date">2020-2030 TARGET</h3><p>'  + target_info_1; +'</p>'}
+	if(target_date_2 == null) {date_2 = "";} else {date_2 = '<h3 class="target-date">POST 2030</h3><p>'  + target_info_2 +'</p>';}
     $( "#state-policies #policies-name" ).replaceWith('<h2 id="policies-name">'+csv.states[state]['goals'][0]['State_Name']+'</h2>');
-    $( "#about-content" ).html('<h3>This is a sentence about: ' + about_data + '</h3>' + date_1 + '' + date_2 );
+    $( "#about-content" ).html("<div>" + date_1 + "</div>" + "<div>" + date_2 +"</div>");
 	$( "#about-tab" ).css("display","none");
 	$("#sector-tabs li.hover_about").addClass( "active-tab" );
     $( "#sector-tabs" ).css('display', 'block');

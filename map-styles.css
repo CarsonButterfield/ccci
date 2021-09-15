@@ -1,0 +1,456 @@
+:root {
+  --medalist: #C4820E;
+  --webgray:#888888;
+  --grey: #EEE;
+  --caligold: #FDB515;
+  --webfoundersrock:#3b7ea1;
+  --berkeleyblue: #003262;
+  --stonepine: #584f29;
+  --bayfog:#DDD5cf;
+}
+
+* {
+  padding:0;
+  margin:0;
+}
+
+
+@font-face {
+	font-family:'freightsans_probold';src:url(../fonts/freigsanprobold.eot);src:url(../fonts/freigsanprobold.eot?#iefix) format("embedded-opentype"),url(../fonts/freigsanprobold.woff2) format("woff2"),url(../fonts/freigsanprobold.woff) format("woff"),url(../fonts/freigsanprobold.ttf) format("truetype"),url(../fonts/freigsanprobold.svg#freightsans_probold) format("svg");font-weight:400;font-style:normal
+}
+
+@font-face {
+	font-family:'freightsans_promedium';src:url(../fonts/freigsanpromed.eot);src:url(../fonts/freigsanpromed.eot?#iefix) format("embedded-opentype"),url(../fonts/freigsanpromed.woff2) format("woff2"),url(../fonts/freigsanpromed.woff) format("woff"),url(../fonts/freigsanpromed.ttf) format("truetype"),url(../fonts/freigsanpromed.svg#freightsans_promedium) format("svg");font-weight:400;font-style:normal
+}
+@font-face {
+	font-family:'freightsans_prosemibold';src:url(../fonts/freigsanprosem.eot);src:url(../fonts/freigsanprosem.eot?#iefix) format("embedded-opentype"),url(../fonts/freigsanprosem.woff2) format("woff2"),url(../fonts/freigsanprosem.woff) format("woff"),url(../fonts/freigsanprosem.ttf) format("truetype"),url(../fonts/freigsanprosem.svg#freightsans_prosemibold) format("svg");font-weight:400;font-style:normal
+}
+
+@font-face {
+	font-family:'freightmicro_prosemibold';src:url(../fonts/freigmicprosem.eot);src:url(../fonts/freigmicprosem.eot?#iefix) format("embedded-opentype"),url(../fonts/freigmicprosem.woff2) format("woff2"),url(../fonts/freigmicprosem.woff) format("woff"),url(../fonts/freigmicprosem.ttf) format("truetype"),url(../fonts/freigmicprosem.svg#freightmicro_prosemibold) format("svg");font-weight:400;font-style:normal
+}
+#about-content {
+  display: flex;
+  justify-content: space-between;
+  font-family: freightmicro_prosemibold;
+}
+#about-content > div {
+  width: 50%;
+  text-align: center;
+  margin: 1px;
+}
+#about-content > div > .target-date {
+  background-color: var(--medalist);
+  color: var(--grey);
+  height: 30px;
+}
+#about-content > div > p {
+  background-color: var(--bayfog);
+  color: var(--berkeleyblue);
+  height: 30px;
+  margin: 0;
+}
+
+#reset-label p{
+  background-color: var(--caligold);
+  width:95px;
+  height:35px;
+  font-size: 15px;
+  text-align: center;
+  color:var(--berkeleyblue);
+  padding:5px;
+  font-family: 'freightmicro_prosemibold', serif;
+}
+
+#climate-action-map-wrapper {
+font-family:'freightsans_promedium';
+color: #46535E;
+}
+
+#climate-action-map-wrapper #maptop
+{
+	padding-bottom: 2em;
+}
+
+#climate-action-map-wrapper #map-svg {
+width: 100%;
+}
+
+#climate-action-map-wrapper input {
+position: fixed;
+opacity: 0;
+pointer-events: none;
+}
+
+#climate-action-map-wrapper input:checked + label {
+color: #C4820E;
+font-weight: bold;
+}
+
+#climate-action-map-wrapper input + label:hover {
+color: #FDB515;
+cursor: pointer;
+}
+
+#climate-action-map-wrapper input + label {
+color: #46535E;
+cursor: pointer;
+}
+
+
+#climate-action-map-wrapper h1, #climate-action-map-wrapper h2, #climate-action-map-wrapper h3, #climate-action-map-wrapper h5 {
+font-family: 'freightmicro_prosemibold', serif;
+}
+
+#climate-action-map-wrapper h2
+{
+	font-size: 22px;
+	color: #003262;
+}
+
+#climate-action-map-wrapper h3
+{
+	font-size: 20px;
+	color: #003262;
+}
+
+#climate-action-map-wrapper h3.gold {
+color: #C4820E;
+font-family: 'freightmicro_prosemibold', serif;
+margin-top: 1em;
+}
+
+#climate-action-map-wrapper h3.sampleca
+{
+background-color: #FDB515;
+text-align: center;
+padding: 20px;
+width: 100%;
+margin: 2em 0;
+}
+
+#climate-action-map-wrapper h4.sectortitle
+{
+color: #C4820E;
+text-transform: uppercase;
+margin-top: 0;
+margin-bottom: 1em;
+}
+
+#climate-action-map-wrapper .clear
+{
+	clear: both;
+}
+
+#climate-action-map-wrapper .center
+{
+	text-align: center;
+}
+
+#climate-action-map-wrapper .blue
+{
+	color: #003262;
+}
+
+#climate-action-map-wrapper div.bothtables
+{
+	border: 2px solid #b8b8b8;
+	padding: 2px;
+	margin-top: 2em;
+}
+
+#climate-action-map-wrapper div.targettables
+{
+	float: left;
+	width: 49.75%;
+	margin-right: 2px;
+}
+
+#climate-action-map-wrapper .targettables table
+{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+#climate-action-map-wrapper .targettables table.one
+{
+	border-right: 2px solid #b8b8b8;
+	margin-right: 1%;
+}
+
+#climate-action-map-wrapper .targettables td
+{
+	border-bottom: 1px solid #B8B8B8;
+	color: #003262;
+	}
+
+#climate-action-map-wrapper .targettables td:nth-child(odd) {
+  background-color: #EEEAE8;
+  width: 36%;
+  border-right: 2px solid #fff;
+  color: #46535E;
+}
+
+#climate-action-map-wrapper .targettables th:nth-child(odd) {
+  background-color: #DDD5CF;
+  width: 36%;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  color: #46535E;
+}
+
+#climate-action-map-wrapper .targettables th:nth-child(even) {
+  background-color: #C4820E;
+  color: #fff;
+  border-bottom: 2px solid #fff;
+}
+
+#climate-action-map-wrapper #content_energy p, #climate-action-map-wrapper #content_transportation p, #climate-action-map-wrapper #content_industry p, #climate-action-map-wrapper #content_building p, #climate-action-map-wrapper #content_natural p, #climate-action-map-wrapper #content_cross p
+{
+	padding-bottom: 1em;
+	border-bottom: 1px solid #B8B8B8
+}
+
+#climate-action-map-wrapper #content_energy p.noborder, #climate-action-map-wrapper #content_transportation p.noborder, #climate-action-map-wrapper #content_industry p.noborder, #climate-action-map-wrapper #content_building p.noborder, #climate-action-map-wrapper #content_natural p.noborder, #climate-action-map-wrapper #content_cross p.noborder{
+	border-bottom: none;
+}
+
+#climate-action-map-wrapper #definitions
+{
+	clear: both;
+	font-size: .8em;
+	margin-top: 2em;
+}
+
+#climate-action-map-wrapper #definitions h3
+{
+	border-bottom: 1px solid #B8B8B8;
+	width: 100%;
+	margin-top: 1em;
+	padding: 0 0 5px 10px;
+	text-transform: uppercase;
+}
+
+#climate-action-map-wrapper #definitions h3 span.rotate
+{
+/*transform: rotate(90deg);*/
+writing-mode: vertical-rl;
+}
+
+#climate-action-map-wrapper #definitions h4
+{
+	font-size: 16px;
+	border-left: 1px solid #B8B8B8;
+	border-bottom: 1px solid #B8B8B8;
+	width: 100%;
+	margin-top: 1em;
+	padding: 0 0 5px 10px;
+}
+
+#climate-action-map-wrapper #definitions p
+{
+	font-size: 16px;
+	margin: 0 0 .5em 0;
+}
+
+#content #climate-action-map-wrapper #fineprint
+{
+	margin-top: 3em;
+	
+	padding-top: 1em;
+}
+
+#content #climate-action-map-wrapper #fineprint p
+{
+	font-size: 14px;
+}
+
+#content_2030, #content_post, #content_cross, #content_natural, #content_building, #content_industry, #content_transportation, #content_energy {
+display: none;
+} 
+
+#climate-action-map-content.selected_2030 #content_2030, #climate-action-map-content.selected_post #content_post, #climate-action-map-content.selected_cross #content_cross,
+#climate-action-map-content.selected_natural #content_natural, #climate-action-map-content.selected_building #content_building, #climate-action-map-content.selected_industry #content_industry,
+#climate-action-map-content.selected_transportation #content_transportation, #climate-action-map-content.selected_energy #content_energy {
+display: block;
+}
+
+#map-svg svg{
+width: 100%;
+}
+
+#climate-action-map-wrapper .default-state {
+fill:#DDD5CF;
+stroke:#ffffff;
+stroke-width:1.25;
+stroke-miterlimit:4;
+stroke-opacity:1;
+stroke-dasharray:none;
+cursor: pointer
+}
+#nature-tab {
+  width: 210px !important;
+}
+#climate-action-map-wrapper .text-style {
+font-size: 18px; 
+fill: #46535E; 
+}
+
+@media (max-width:960px) {
+#climate-action-map-wrapper  .text-style {
+ font-size: 25px; 
+  color: black;
+  }
+
+}
+
+
+.map-line {
+stroke: #b8b8b8;
+}
+
+.map-line-fancy {
+fill: none; 
+stroke: #b8b8b8; 
+stroke-width: 1.25; 
+stroke-linecap: butt; 
+stroke-linejoin: miter; 
+stroke-miterlimit: 4; 
+stroke-opacity: 1; 
+stroke-dasharray: none;
+}
+
+#climate-action-map-legend h3 {
+font-weight: bold;
+text-transform: uppercase;
+border-top: 1px solid #b8b8b8;
+padding-top: 20px;
+margin-top: 20px;
+margin-bottom: 10px;
+font-size: 20px;
+}
+
+#climate-action-map-legend {
+width: 200px;
+  float: left;
+color: #46535E;
+}
+
+#climate-action-map-wrapper #map-svg {
+width: calc(100% - 200px);
+float: left;
+}
+
+
+#climate-action-map-content {
+clear: left;
+padding-top: 3em;
+}
+
+/* Accordion styles */
+#definitions div {
+  display: none;
+  margin:0!important;
+  padding: 10px;
+}
+
+#definitions h3 {
+  cursor: pointer;
+  font-family: "freightsans_promedium","sans-serif";
+}
+
+.state-name-comma:after {
+content: ", ";
+}
+
+.state-name-comma:last-child:after {
+content: "";
+}
+
+
+#state-policies td, #state-policies th{
+border: 1px solid white;
+padding: 10px;
+}
+
+#state-policies tr:nth-child(even){
+background: #EEEAE8;
+}
+
+#state-policies tr:nth-child(odd){
+background: #DDD5CF;
+}
+
+#state-policies thead th {
+cursor: pointer;
+}
+#sector-tabs {
+  display: flex;
+ justify-content: space-between;
+ padding: 0;
+  
+}
+#sector-tabs li {
+display: inline-block;
+  width: 125px;
+  font-size: 15px;
+  text-align: center;
+  margin: 0 0 0 2px;
+  font-family: 'freightmicro_prosemibold', serif;
+  padding: 5px;
+  background: var(--bayfog);
+  height:40px;
+  color: var(--berkeleyblue);
+  cursor: pointer;
+}
+
+#sector-tabs li.active-tab {
+background: var(--medalist) !important;
+  color: white !important;
+}
+
+text tspan { pointer-events: none; }
+
+.state-name-comma {
+cursor: pointer;
+}
+
+@media (max-width:860px) {
+  
+#climate-action-map-wrapper div.targettables
+{
+	float: none;
+	width: 100%;
+  }
+}
+
+@media (max-width:660px) {
+  #climate-action-map-legend, #climate-action-map-wrapper #map-svg {
+    width: 100%;
+    float: none;
+  }
+  
+  
+#climate-action-map-wrapper div.targettables
+{
+	float: none;
+	width: 100%;
+}
+
+
+#climate-action-map-wrapper .hideonmobile
+{
+	display: none;
+}
+
+#climate-action-map-wrapper .targettables table.one
+{
+	border-right: none;
+}
+
+
+}
+
+#map-svg .selected-state {
+fill: #C4820E !important;
+}

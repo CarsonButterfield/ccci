@@ -37,6 +37,7 @@ const generateStateChart = (state) => {
     for(field in sortedCarbonData[state]){
         dataSeries.push({
             name: field,
+            colorString:'#ffffff',
             data: sortedCarbonData[state][field].map(datum => {
                 const dateArr = datum.date.split('/')
                 const newDate = `${dateArr[1]}/${dateArr[0]}/${dateArr[2]}`
@@ -71,7 +72,7 @@ const generateStateChart = (state) => {
                 rangeDescription: 'Range: 2010 to 2017'
             }
         },
-    
+        colors: ['#FDB515','#003262','#584f29', '#888888', '#3B7EA1', '#C4820E'],
         legend: {
             layout: 'vertical',
             align: 'right',
