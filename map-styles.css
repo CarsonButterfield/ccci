@@ -29,7 +29,27 @@
 @font-face {
 	font-family:'freightmicro_prosemibold';src:url(../fonts/freigmicprosem.eot);src:url(../fonts/freigmicprosem.eot?#iefix) format("embedded-opentype"),url(../fonts/freigmicprosem.woff2) format("woff2"),url(../fonts/freigmicprosem.woff) format("woff"),url(../fonts/freigmicprosem.ttf) format("truetype"),url(../fonts/freigmicprosem.svg#freightmicro_prosemibold) format("svg");font-weight:400;font-style:normal
 }
+
+th:nth-child(1){
+  width:35%;
+}
+
+th:nth-child(4){
+  width:35%;
+}
+th:nth-child(2){
+  width:15%;
+}
+
+th:nth-child(3){
+  width:15%;
+}
+#carbon-graph {
+  border: 2px solid var(--grey);
+}
 #about-content {
+  border: 2px solid var(--grey);
+  border-bottom: 0;
   display: flex;
   justify-content: space-between;
   font-family: freightmicro_prosemibold;
@@ -367,7 +387,6 @@ content: ", ";
 content: "";
 }
 
-
 #state-policies td, #state-policies th{
 border: 1px solid white;
 padding: 10px;
@@ -383,6 +402,9 @@ background: #DDD5CF;
 
 #state-policies thead th {
 cursor: pointer;
+background-color: var(--medalist);
+text-align: center;
+color: white;
 }
 #sector-tabs {
   display: flex;
@@ -453,4 +475,12 @@ cursor: pointer;
 
 #map-svg .selected-state {
 fill: #C4820E !important;
+}
+
+
+@media only screen and (max-width:780px) {
+  #sector-tabs li {
+    height: auto;
+  }
+  
 }

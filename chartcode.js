@@ -37,24 +37,26 @@ const generateStateChart = (state) => {
     for(field in sortedCarbonData[state]){
         dataSeries.push({
             name: field,
-            colorString:'#ffffff',
             data: sortedCarbonData[state][field].map(datum => {
                 const dateArr = datum.date.split('/')
                 const newDate = `${dateArr[1]}/${dateArr[0]}/${dateArr[2]}`
                 return {y:datum.value, x:new Date(newDate).getTime()}
             })
         })
-        console.log(dataSeries)
     }
     $('body').append(`<figure class="highcharts-figure"> <div id="${state}"></div></figure>`)
     Highcharts.chart(`carbon-graph`, {
 
         title: {
-            text: `Carbon Chart ${state}`
+            text: `${state} Carbon Emissions Chart`,
+            style:{
+                color:'#003262',
+            },
+            align:'left'
         },
     
         subtitle: {
-            text: 'Source: thesolarfoundation.com'
+            text: 'Source: carbonmonitor.org'
         },
     
         yAxis: {
