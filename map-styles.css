@@ -416,14 +416,14 @@ color: white;
 }
 #sector-tabs li {
 display: inline-block;
-  width: 125px;
+  width: 14%;
   font-size: 15px;
   text-align: center;
   margin: 0 0 0 2px;
   font-family: 'freightmicro_prosemibold', serif;
   padding: 5px;
   background: var(--bayfog);
-  height:40px;
+  height:55px;
   color: var(--berkeleyblue);
   cursor: pointer;
 }

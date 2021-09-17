@@ -272,12 +272,12 @@ csv.parseData().then(() => {
     var target_date_2 = csv.states[state]['goals'][0]['Target_Date_2'];
     var target_info_2 = csv.states[state]['goals'][0]['Target_Info_2'];
     if (target_date_1 == null) {
-      date_1 = "";
+      date_1 = '<h3 class="target-date">2020-2030 TARGET</h3><p>NONE</p>';
     } else {
       date_1 = '<h3 class="target-date">2020-2030 TARGET</h3><p>' + target_info_1; + '</p>'
     }
     if (target_date_2 == null) {
-      date_2 = "";
+      date_2 = '<h3 class="target-date">POST 2030</h3><p>NONE</p>';
     } else {
       date_2 = '<h3 class="target-date">POST 2030</h3><p>' + target_info_2 + '</p>';
     }
@@ -335,7 +335,8 @@ csv.parseData().then(() => {
     window.clicked_state = [this.id];
     sector = window.clicked_sector;
     set_state_active(window.clicked_state);
-    if (sector == null || sector == 'hover_post' || sector == 'hover_2030') {
+    if (sector == null || sector == 'hover_post' || sector == 'hover_2030' || sector == 'hover_about') {
+      console.log('beep')
       $("#about-tab").css("display", "block");
     } else {
       $("#about-tab").css("display", "none");
@@ -343,6 +344,11 @@ csv.parseData().then(() => {
     var policies = csv.states[window.clicked_state][sector];
     build_table(policies);
     about_tab([this.id]);
+    if(sector == 'hover_about'){
+      $('#hover_about').show()
+    }else{
+      $('#hover_about').hide()
+    }
   });
 
   $("#climate-action-map-legend .legend_radios").on("click", function (event) {
@@ -353,7 +359,7 @@ csv.parseData().then(() => {
     set_map_active(sector);
     if (sector == 'hover_post' || sector == 'hover_2030' || sector == 'hover_reset') {
       window.clicked_state = null;
-      $("#map-svg *").removeClass("selected-state");
+      // $("#map-svg *").removeClass("selected-state");
       $(".table-data").remove();
       $("#state-policies #policies-table").append('<tr class="table-data" id="begin-table"><td colspan="4">Click on a state to see the policies in each sector</td></tr>');
       $("#about-tab").css("display", "none");
@@ -375,7 +381,7 @@ csv.parseData().then(() => {
       $("#climate-action-map-content").removeClass();
       $("#sector-tabs li.hover_about").removeClass("active-tab");
       // if they click on a state after hitting reset
-      if (sector == 'hover_reset') {
+      if (sector == 'hover_reset' || 'hover_about') {
         $("#about-tab").css("display", "block");
         $("#sector-tabs li.hover_about").addClass("active-tab");
 
@@ -385,7 +391,6 @@ csv.parseData().then(() => {
 
 
   });
-
 
   // if they click on the tabs
   $("#sector-tabs li").on("click", function (event) {
