@@ -51,6 +51,7 @@ const generateStateChart = (state) => {
             text: `${state} Carbon Emissions Chart`,
             style:{
                 color:'#003262',
+                fontFamily:'freightmicro_prosemibold',
             },
             align:'left'
         },

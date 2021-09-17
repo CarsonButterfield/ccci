@@ -92,6 +92,7 @@ Long-term (post 2030)</h3>
 
 <div id="state-policies"><h2 id="policies-name"></h2>
 <ul id="sector-tabs" style="display: none"><li class="hover_about">About</li><li class="hover_energy">Energy Supply</li><li class="hover_transportation">Transportation</li><li class="hover_industry">Industry</li><li class="hover_building">Buildings</li><li  id="nature-tab" class="hover_natural">Natural and Working Lands</li><li class="hover_cross">Cross-sector</li></ul>
+<h3 id="no-results">This state has no policies in this sector.</h3>
 <div id="about-tab">
 	<h3 id="about-content"></h3>
 <figure class="highcharts-figure"> <div id="carbon-graph"></div></figure>

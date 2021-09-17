@@ -29,7 +29,9 @@
 @font-face {
 	font-family:'freightmicro_prosemibold';src:url(../fonts/freigmicprosem.eot);src:url(../fonts/freigmicprosem.eot?#iefix) format("embedded-opentype"),url(../fonts/freigmicprosem.woff2) format("woff2"),url(../fonts/freigmicprosem.woff) format("woff"),url(../fonts/freigmicprosem.ttf) format("truetype"),url(../fonts/freigmicprosem.svg#freightmicro_prosemibold) format("svg");font-weight:400;font-style:normal
 }
-
+#no-results {
+  display:none;
+}
 th:nth-child(1){
   width:35%;
 }
@@ -52,7 +54,7 @@ th:nth-child(3){
   border-bottom: 0;
   display: flex;
   justify-content: space-between;
-  font-family: freightmicro_prosemibold;
+  font-family: freightsans_promedium;
 }
 #about-content > div {
   width: 50%;
