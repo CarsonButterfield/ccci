@@ -48,12 +48,7 @@ const generateStateChart = (state) => {
     Highcharts.chart(`carbon-graph`, {
 
         title: {
-            text: `${state} Carbon Emissions Chart`,
-            style:{
-                color:'#003262',
-                fontFamily:'freightmicro_prosemibold',
-            },
-            align:'left'
+            text: ``,
         },
     
         subtitle: {

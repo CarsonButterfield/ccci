@@ -95,6 +95,7 @@ Long-term (post 2030)</h3>
 <h3 id="no-results">This state has no policies in this sector.</h3>
 <div id="about-tab">
 	<h3 id="about-content"></h3>
+	<div id="graph-title"><h3 id="graph-title-text">CARBON EMISSIONS BY SECTOR</h3></div>
 <figure class="highcharts-figure"> <div id="carbon-graph"></div></figure>
 </div>
 <table id="policies-table" style="display: none;"><thead><tr><th>Policy</th><th>Year Published</th><th>Type</th><th>Description</th></tr></thead>

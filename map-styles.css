@@ -46,6 +46,19 @@ th:nth-child(2){
 th:nth-child(3){
   width:15%;
 }
+#about-tab{
+  display: none;
+}
+#graph-title{
+text-align: center;
+color: white;
+background-color: var(--medalist);
+height: 40px;
+margin-top: 10px;
+display: flex;
+}
+
+
 #carbon-graph {
   border: 2px solid var(--grey);
 }
@@ -478,7 +491,10 @@ cursor: pointer;
 #map-svg .selected-state {
 fill: #C4820E !important;
 }
-
+#graph-title h3{
+  color: white;
+  margin:auto;
+}
 
 @media only screen and (max-width:780px) {
   #sector-tabs li {

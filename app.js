@@ -263,7 +263,9 @@ csv.parseData().then(() => {
       $("#climate-action-map-content").addClass("selected_post");
     }
   }
-
+ $('#default-state').click(e => {
+   $('#sector-tabs li').removeClass('active-tab')
+ })
   function about_tab(state) {
     generateStateChart(csv.states[state].STATE_Name)
     var about_data = csv.states[state]['goals'][0]['About'];
@@ -284,7 +286,7 @@ csv.parseData().then(() => {
     $("#state-policies #policies-name").replaceWith('<h2 id="policies-name">' + csv.states[state]['goals'][0]['State_Name'] + '</h2>');
     $("#about-content").html("<div>" + date_1 + "</div>" + "<div>" + date_2 + "</div>");
     $("#about-tab").css("display", "none");
-    $("#sector-tabs li.hover_about").addClass("active-tab");
+    $("#sector-tabs li").removeClass("active-tab");
     $("#sector-tabs").css('display', 'flex');
     $('#no-results').hide()
   }
@@ -333,23 +335,20 @@ csv.parseData().then(() => {
 
   $("#map-svg .default-state").on("click", function (event) {
     window.clicked_state = [this.id];
-    sector = window.clicked_sector;
+    sector = window.clicked_sector
+    console.log(sector)
     set_state_active(window.clicked_state);
-    if (sector == null || sector == 'hover_post' || sector == 'hover_2030' || sector == 'hover_about') {
-      console.log('beep')
+    if ( !sector || sector == 'hover_post' || sector == 'hover_2030' || sector == 'hover_about') {
       $("#about-tab").css("display", "block");
     } else {
       $("#about-tab").css("display", "none");
     }
+    if(sector){
     var policies = csv.states[window.clicked_state][sector];
     build_table(policies);
-    about_tab([this.id]);
-    if(sector == 'hover_about'){
-      $('#hover_about').show()
-    }else{
-      $('#hover_about').hide()
-    }
-  });
+  }
+  about_tab([this.id]);}
+  )
 
   $("#climate-action-map-legend .legend_radios").on("click", function (event) {
     $("#state-policies #policies-table").css("display", "block");
@@ -359,7 +358,7 @@ csv.parseData().then(() => {
     set_map_active(sector);
     if (sector == 'hover_post' || sector == 'hover_2030' || sector == 'hover_reset') {
       window.clicked_state = null;
-      // $("#map-svg *").removeClass("selected-state");
+      $("#map-svg *").removeClass("selected-state");
       $(".table-data").remove();
       $("#state-policies #policies-table").append('<tr class="table-data" id="begin-table"><td colspan="4">Click on a state to see the policies in each sector</td></tr>');
       $("#about-tab").css("display", "none");
@@ -381,7 +380,7 @@ csv.parseData().then(() => {
       $("#climate-action-map-content").removeClass();
       $("#sector-tabs li.hover_about").removeClass("active-tab");
       // if they click on a state after hitting reset
-      if (sector == 'hover_reset' || 'hover_about') {
+      if (sector == 'hover_reset') {
         $("#about-tab").css("display", "block");
         $("#sector-tabs li.hover_about").addClass("active-tab");
 
@@ -396,6 +395,7 @@ csv.parseData().then(() => {
   $("#sector-tabs li").on("click", function (event) {
     sector = $(this).attr("class");
     window.clicked_sector = sector;
+    console.log(sector);
     $("#sector-tabs li").removeClass("active-tab");
     if (sector == "hover_about") {
       $('#no-results').hide()
@@ -423,7 +423,4 @@ csv.parseData().then(() => {
     build_table(policies);
     about_tab([this.id]);
   });
-
-
-
 })
