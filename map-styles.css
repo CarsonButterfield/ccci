@@ -48,26 +48,28 @@ th:nth-child(3){
 }
 #about-tab{
   display: none;
+  border: 2px solid var(--grey);
 }
-#graph-title{
+.graph-title{
 text-align: center;
 color: white;
 background-color: var(--medalist);
 height: 40px;
-margin-top: 10px;
+
 display: flex;
 }
 
-
-#carbon-graph {
-  border: 2px solid var(--grey);
+.gray-line {
+  width: 80%;
+  height: 2px;
+  background-color: var(--grey);
+  margin: 3px auto;
 }
 #about-content {
-  border: 2px solid var(--grey);
   border-bottom: 0;
   display: flex;
   justify-content: space-between;
-  font-family: freightsans_promedium;
+  
 }
 #about-content > div {
   width: 50%;
@@ -75,15 +77,16 @@ display: flex;
   margin: 1px;
 }
 #about-content > div > .target-date {
-  background-color: var(--medalist);
-  color: var(--grey);
+  background-color: var(--bayfog);
+  color:var(--berkeleyblue);
   height: 30px;
 }
 #about-content > div > p {
   background-color: var(--bayfog);
   color: var(--berkeleyblue);
   height: 30px;
-  margin: 0;
+  margin: 2px 0;
+  font-family: freightsans_promedium;
 }
 
 #reset-label p{
@@ -433,7 +436,7 @@ display: inline-block;
   font-size: 15px;
   text-align: center;
   margin: 0 0 0 2px;
-  font-family: 'freightmicro_prosemibold', serif;
+  font-family: 'freightsans_prosemibold', serif;
   padding: 5px;
   background: var(--bayfog);
   height:55px;
@@ -491,7 +494,7 @@ cursor: pointer;
 #map-svg .selected-state {
 fill: #C4820E !important;
 }
-#graph-title h3{
+#about-tab h3{
   color: white;
   margin:auto;
 }
