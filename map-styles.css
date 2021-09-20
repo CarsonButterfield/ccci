@@ -46,9 +46,18 @@ th:nth-child(2){
 th:nth-child(3){
   width:15%;
 }
+#about-tab #carbon-text {
+  font-family:'freightsans_promedium' ;
+}
+#carbon-source {
+  text-align:right;
+}
 #about-tab{
   display: none;
   border: 2px solid var(--grey);
+}
+.title-row{
+  font-family: freightsans_prosemibold;
 }
 .graph-title{
 text-align: center;
@@ -97,7 +106,7 @@ display: flex;
   text-align: center;
   color:var(--berkeleyblue);
   padding:5px;
-  font-family: 'freightmicro_prosemibold', serif;
+  font-family: 'freightsans_prosemibold', serif;
 }
 
 #climate-action-map-wrapper {
@@ -195,12 +204,13 @@ margin-bottom: 1em;
 	border: 1px solid var(--grey);
 	padding: 2px;
 	margin-top: 2em;
+  width:50%;
 }
 
 #climate-action-map-wrapper div.targettables
 {
 	float: left;
-	width: 49.75%;
+	width: 100%;
 	margin-right: 2px;
 }
 
@@ -423,6 +433,7 @@ cursor: pointer;
 background-color: var(--medalist);
 text-align: center;
 color: white;
+font-family: freightsans_prosemibold,"sans-serif";
 }
 #sector-tabs {
   display: flex;
@@ -434,7 +445,7 @@ color: white;
 display: inline-block;
 text-transform: uppercase;
   width: 14%;
-  font-size: 15px;
+  font-size: 14px;
   text-align: center;
   margin: 0 0 0 2px;
   font-family: 'freightsans_prosemibold', serif;
@@ -503,6 +514,9 @@ fill: #C4820E !important;
 @media only screen and (max-width:780px) {
   #sector-tabs li {
     height: auto;
+  }
+  #climate-action-map-wrapper div.bothtables {
+    width: 100%;
   }
   #about-content > div > p {
     height: 50px;

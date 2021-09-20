@@ -51,10 +51,6 @@ const generateStateChart = (state) => {
             text: ``,
         },
     
-        subtitle: {
-            text: 'Source: carbonmonitor.org'
-        },
-    
         yAxis: {
             title: {
                 text: 'Carbon Emissions'

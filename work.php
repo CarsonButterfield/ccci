@@ -16,7 +16,7 @@
 <div id="climate-action-map-legend">
 	<p>Click on the goals or policies to view the relevant states highlighted on the map.</p>
 	<h3>GHG Reduction Target Dates</h3>
-	<input type="radio" name="select" id="hover_2030" class="legend_radios" /><label for="hover_2030">2020 - 2030</label>
+	<input type="radio" name="select" id="hover_2030" class="legend_radios" /><label for="hover_2030">2025 - 2030</label>
 	<input type="radio" name="select" id="hover_post" class="legend_radios" /><label for="hover_post">Post 2030</label>
 	<h3>Climate Policies by Sector</h3>
 	<input type="radio" name="select" id="hover_energy" class="legend_radios hover_energy" /><label for="hover_energy">Energy Supply</label>
@@ -65,11 +65,11 @@
 
 	<div id="content_2030">
 	  <h3>GHG REDUCTION TARGETS BY STATE:<br />
-		Near term: 2020 - 2030</h3>
+		Near term: 2025 - 2030</h3>
 		<div class="bothtables">
 		  <div class="targettables">
 		    <table class="one">
-	      <tr><th>STATE</th> <th>2020 - 2030 TARGET</th></tr>
+	      <tr class="title-row"><th>STATE</th> <th>2025 - 2030 TARGET</th></tr>
 	    </table>
 		  </div>
 		<div class="clear"></div>
@@ -82,7 +82,7 @@ Long-term (post 2030)</h3>
 	<div class="bothtables">
 		<div class="targettables">
 			<table class="one">
-				<tr><th>STATE</th> <th>POST 2030 TARGETS</th></tr>
+				<tr class="title-row"><th>STATE</th> <th>POST 2030 TARGETS</th></tr>
 			</table>
 		</div>
 	<div class="clear"></div>
@@ -97,8 +97,11 @@ Long-term (post 2030)</h3>
 <div class="graph-title"><h3 class="graph-title-text">GREENHOUSE GAS EMISSION REDUCTION TARGET</h3></div>
 	<h3 id="about-content"></h3>
 	<div class="gray-line"></div>
-	<div class="graph-title"><h3 class="graph-title-text">CARBON EMISSIONS BY SECTOR</h3></div>
+	<div class="graph-title"><h3 class="graph-title-text">CARBON EMISSIONS BY SECTOR</h3>
+</div>
+<p id="carbon-text">Real-time emissions data provided by Carbon Monitor, an initiative providing science-based carbon dioxide estimates</p>
 <figure class="highcharts-figure"> <div id="carbon-graph"></div></figure>
+<footer id="carbon-source">Source: US Carbon Monitor </footer>
 </div>
 <table id="policies-table" style="display: none;"><thead><tr><th>Policy</th><th>Year Published</th><th>Type</th><th>Description</th></tr></thead>
 <tr class="table-data"><td colspan="4">Click on a state to see the policies in each sector</td></tr>
