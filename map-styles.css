@@ -454,6 +454,7 @@ text-transform: uppercase;
   height:55px;
   color: var(--berkeleyblue);
   cursor: pointer;
+  line-height: 100%;
 }
 
 #sector-tabs li.active-tab {
