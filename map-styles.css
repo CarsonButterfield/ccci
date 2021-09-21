@@ -206,7 +206,7 @@ margin-bottom: 1em;
 
 #climate-action-map-wrapper div.bothtables
 {
-	border: 1px solid var(--grey);
+	border: 2px solid var(--bayfog);
 	padding: 2px;
 	margin-top: 2em;
   width:50%;
