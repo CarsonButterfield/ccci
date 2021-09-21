@@ -53,7 +53,7 @@ const generateStateChart = (state) => {
     
         yAxis: {
             title: {
-                text: 'Carbon Emissions'
+                text: 'Carbon Emissions (MtCO<span>&#8322;</span>)'
             }
         },
     

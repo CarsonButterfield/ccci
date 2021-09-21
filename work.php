@@ -91,8 +91,8 @@ Long-term (post 2030)</h3>
 </div>
 
 <div id="state-policies"><h2 id="policies-name"></h2>
-<ul id="sector-tabs" style="display: none"><li class="hover_about">GHG Emissions and Targets</li><li class="hover_energy">Energy Supply</li><li class="hover_transportation">Transportation</li><li class="hover_industry">Industry</li><li class="hover_building">Buildings</li><li  id="nature-tab" class="hover_natural">Natural and Working Lands</li><li class="hover_cross">Cross-sector</li></ul>
-<h3 id="no-results">This state has no policies in this sector.</h3>
+<ul id="sector-tabs" style="display: none"><li class="hover_about"><p>GHG Emissions and Targets </p></li><li class="hover_energy"><p>Energy Supply</p></li><li class="hover_transportation"><p>Transportation</p></li><li class="hover_industry"><p>Industry</p></li><li class="hover_building"><p>Buildings</p></li><li  id="nature-tab" class="hover_natural"><p>Natural and Working Lands</p></li><li class="hover_cross"><p>Cross-sector</p></li></ul>
+<h3 id="no-results">No data currently available.</h3>
 <div id="about-tab">
 <div class="graph-title"><h3 class="graph-title-text">GREENHOUSE GAS EMISSION REDUCTION TARGET</h3></div>
 	<h3 id="about-content"></h3>
@@ -139,12 +139,10 @@ Long-term (post 2030)</h3>
 <div id="fineprint">
 
 <p>
-Disclaimer: Currently, only 27 states have set targets.  Data was collected as of summer of 2020. Data subject to updates and change over time. Most data is linked to publicly-available government documents.
-</p>
+Disclaimer: This project examines sector policies for states with greenhouse gas emissions reductions targets. Therefore, policy data is only available for the 27 states with set targets. Data was collected as of summer of 2020. Data subject to updates and change over time. Most data is linked to publicly-available government documents.</p>
 
 <p>
- Acknowledgement: This map includes data for US states with greenhouse gas emission reduction targets. We intend to add Chinese data in the future and the real-time emissions data will be provided by Carbon Monitor, Tsinghua University. 
-</p>
+Acknowledgement: We would like to thank the Carbon Monitor for sharing their data. We would also like to thank Maya Butterfield, Carson Butterfield, Anais Chakerian and Sandra Murray for designing the site and Emily Yen for her research.</p>
 </div>
 
 

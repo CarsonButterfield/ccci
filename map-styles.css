@@ -52,9 +52,13 @@ th:nth-child(3){
 #carbon-source {
   text-align:right;
 }
+#subscript2 {
+  content: "\2082";
+} 
 #about-tab{
   display: none;
-  border: 2px solid var(--grey);
+  padding: 3px;
+  border: 2px solid var(--bayfog);
 }
 .title-row{
   font-family: freightsans_prosemibold;
@@ -69,10 +73,10 @@ display: flex;
 }
 
 .gray-line {
-  width: 80%;
+  width: 98%;
   height: 2px;
-  background-color: var(--grey);
-  margin: 3px auto;
+  background-color: var(--bayfog);
+  margin: 5px auto;
 }
 #about-content {
   border-bottom: 0;
@@ -93,9 +97,10 @@ display: flex;
 #about-content > div > p {
   background-color: var(--bayfog);
   color: var(--berkeleyblue);
+  margin-bottom: 0;
   height: 30px;
-  margin: 2px 0;
   font-family: freightsans_promedium;
+  margin-top:2px;
 }
 
 #reset-label p{
@@ -442,7 +447,7 @@ font-family: freightsans_prosemibold,"sans-serif";
   
 }
 #sector-tabs li {
-display: inline-block;
+display: flex;
 text-transform: uppercase;
   width: 14%;
   font-size: 14px;
@@ -511,8 +516,23 @@ fill: #C4820E !important;
   color: white;
   margin:auto;
 }
+.bothtables tr {
+  width: 100%;
+}
+#climate-action-map-wrapper .bothtables tr td:nth-child(odd){
+  width:33%
+}
+#climate-action-map-wrapper .bothtables tr td:nth-child(even){
+  width:66%
+}
+#sector-tabs p {
+  margin: auto;
+  font-size:inherit;
+  font-family: inherit;
+  line-height: 100%;
+}
 
-@media only screen and (max-width:780px) {
+@media only screen and (max-width:840px) {
   #sector-tabs li {
     height: auto;
   }
@@ -522,6 +542,7 @@ fill: #C4820E !important;
   #about-content > div > p {
     height: 50px;
     line-height:100%;
+    margin-bottom:0;
     padding: 5px;
   }
   #about-content > div > .target-date {
