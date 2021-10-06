@@ -274,9 +274,9 @@ csv.parseData().then(() => {
     var target_date_2 = csv.states[state]['goals'][0]['Target_Date_2'];
     var target_info_2 = csv.states[state]['goals'][0]['Target_Info_2'];
     if (target_date_1 == null) {
-      date_1 = '<h3 class="target-date">2025-2030 TARGET</h3><p>NONE</p>';
+      date_1 = '<h3 class="target-date">2025-2030 </h3><p>NONE</p>';
     } else {
-      date_1 = '<h3 class="target-date">2025-2030 TARGET</h3><p>' + target_info_1; + '</p>'
+      date_1 = '<h3 class="target-date">2025-2030 </h3><p>' + target_info_1; + '</p>'
     }
     if (target_date_2 == null) {
       date_2 = '<h3 class="target-date">POST 2030</h3><p>NONE</p>';

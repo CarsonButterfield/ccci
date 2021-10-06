@@ -35,7 +35,8 @@
 <div id="climate-action-map-content">
 	<div id="content_energy">
 	  <h3 class="gold">States with Energy Sector Policies</h3>
-	  <p class="noborder"></p>
+
+	  <p class="noborder">(based on States with greenhouse gas emissions reductions targets) <br></p>
 	</div>
 
 	<div id="content_transportation">
@@ -69,7 +70,7 @@
 		<div class="bothtables">
 		  <div class="targettables">
 		    <table class="one">
-	      <tr class="title-row"><th>STATE</th> <th>2025 - 2030 TARGET</th></tr>
+	      <tr class="title-row"><th>STATE</th> <th>2025 - 2030 TARGETS</th></tr>
 	    </table>
 		  </div>
 		<div class="clear"></div>
@@ -78,7 +79,7 @@
 
 	<div id="content_post">
 	  <h3>GHG REDUCTION TARGETS BY STATE:<br />
-Long-term (post 2030)</h3>
+Long-term: post 2030</h3>
 	<div class="bothtables">
 		<div class="targettables">
 			<table class="one">
