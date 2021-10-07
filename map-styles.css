@@ -99,7 +99,6 @@ display: flex;
   color: var(--berkeleyblue);
   margin-bottom: 0;
   height: 30px;
-  font-family: freightsans_promedium;
   margin-top:2px;
 }
 
@@ -150,8 +149,9 @@ cursor: pointer;
 }
 
 
+
 #climate-action-map-wrapper h1, #climate-action-map-wrapper h2, #climate-action-map-wrapper h3, #climate-action-map-wrapper h5 {
-font-family: 'freightmicro_prosemibold', serif;
+font-family: 'freightsans_prosemibold', serif;
 }
 
 #climate-action-map-wrapper h2
@@ -418,6 +418,11 @@ content: ", ";
 
 .state-name-comma:last-child:after {
 content: "";
+}
+
+#policies-table {
+  padding: 3px;
+  border: 2px solid var(--bayfog);
 }
 
 #state-policies td, #state-policies th{

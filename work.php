@@ -41,28 +41,23 @@
 
 	<div id="content_transportation">
 	  <h3 class="gold">States with Transportation Sector Policies</h3>
-	  <p class="noborder"></p>
-	  
+		<p class="noborder">(based on States with greenhouse gas emissions reductions targets) <br></p>	  
 	</div>
 
 	<div id="content_industry">
 	  <h3 class="gold">States with Industry Sector Policies</h3>
-	  <p class="noborder"></p>
-	</div>
+		<p class="noborder">(based on States with greenhouse gas emissions reductions targets) <br></p>	</div>
 
 	<div id="content_building">
 	  <h3 class="gold">States with Building Sector Policies</h3>
-	  <p class="noborder"></p>
-	</div>
+		<p class="noborder">(based on States with greenhouse gas emissions reductions targets) <br></p>	</div>
 	<div id="content_natural">
 	  <h3 class="gold">States with Natural and Working Lands, Agriculture, and Forestry Sector Policies</h3>
-	  <p class="noborder"></p>
-	</div>
+		<p class="noborder">(based on States with greenhouse gas emissions reductions targets) <br></p>	</div>
 
 	<div id="content_cross">
 	  <h3 class="gold">States with Cross-Sector Policies</h3>
-	  <p class="noborder"></p>
-	</div>
+		<p class="noborder">(based on States with greenhouse gas emissions reductions targets) <br></p>	</div>
 
 	<div id="content_2030">
 	  <h3>GHG REDUCTION TARGETS BY STATE:<br />
