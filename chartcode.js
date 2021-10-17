@@ -1,6 +1,7 @@
 let stateCount = 0
 console.log('beep boop')
 const sortedCarbonData = {}
+let graphInterval;
 fetch('https://datas.carbonmonitor.org/API/downloadFullDataset.php?source=carbon_us')
     .then(res => res.text())
     .then(data => {
@@ -30,7 +31,16 @@ fetch('https://datas.carbonmonitor.org/API/downloadFullDataset.php?source=carbon
         })
     })
 
-
+const awaitChart = state => {
+    clearInterval(graphInterval)
+    graphInterval = setInterval(() => {
+    if(sortedCarbonData[state]) {
+        $('.lds-ring').remove()
+        clearInterval(graphInterval)
+        generateStateChart(state)
+    }
+    },500)
+}
 
 const generateStateChart = (state) => {
     const dataSeries = []
@@ -44,59 +54,66 @@ const generateStateChart = (state) => {
             })
         })
     }
-    $('body').append(`<figure class="highcharts-figure"> <div id="${state}"></div></figure>`)
-    Highcharts.chart(`carbon-graph`, {
-
-        title: {
-            text: ``,
-        },
+    console.log(dataSeries.length)
+    if(dataSeries.length > 0){
+        $('body').append(`<figure class="highcharts-figure"> <div id="${state}"></div></figure>`)
+        Highcharts.chart(`carbon-graph`, {
     
-        yAxis: {
             title: {
-                text: 'Carbon Emissions (MtCO<span>&#8322;</span>)'
-            }
-        },
-    
-        xAxis: {
-            type: 'datetime',
-            labels: {
-                format: '{value:%e-%b-%Y}'
-              },
-            accessibility: {
-                rangeDescription: 'Range: 2010 to 2017'
-            }
-        },
-        colors: ['#FDB515','#003262','#584f29', '#888888', '#3B7EA1', '#C4820E'],
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle'
-        },
-    
-        plotOptions: {
-            series: {
-                label: {
-                    connectorAllowed: false
-                },
-            }
-        },
-    
-        series: dataSeries,
-    
-        responsive: {
-            rules: [{
-                condition: {
-                    maxWidth: 500
-                },
-                chartOptions: {
-                    legend: {
-                        layout: 'horizontal',
-                        align: 'center',
-                        verticalAlign: 'bottom'
-                    }
+                text: ``,
+            },
+        
+            yAxis: {
+                title: {
+                    text: 'Carbon Emissions (MtCO<span>&#8322;</span>)'
                 }
-            }]
-        }
-    
-    });
+            },
+        
+            xAxis: {
+                type: 'datetime',
+                labels: {
+                    format: '{value:%e-%b-%Y}'
+                  },
+                accessibility: {
+                    rangeDescription: 'Range: 2010 to 2017'
+                }
+            },
+            colors: ['#FDB515','#003262','#584f29', '#888888', '#3B7EA1', '#C4820E'],
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
+        
+            plotOptions: {
+                series: {
+                    label: {
+                        connectorAllowed: false
+                    },
+                }
+            },
+        
+            series: dataSeries,
+        
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            layout: 'horizontal',
+                            align: 'center',
+                            verticalAlign: 'bottom'
+                        }
+                    }
+                }]
+            }
+        
+        });
+    }
+    else {
+        $('#carbon-graph').append(`<div id="${state}"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>`)
+        awaitChart(state)
+    }
 }

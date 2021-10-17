@@ -45,9 +45,15 @@ class csvData {
     })
   }
   mapSheetTwo = (results) => {
-    // console.log(results)
     for (let state of results.data) {
-      this.states[state.State_Abbr].goals.push(state)
+      if(this.states[state.State_Abbr]){
+        this.states[state.State_Abbr].goals.push(state)
+      } else {
+        this.states[state.State_Abbr] = {
+          goals:[state],
+          STATE_Name: state.STATE_Name
+        }
+      }
     }
   }
 
@@ -75,7 +81,6 @@ class csvData {
     } = this
     let result = [];
     for (let goal of states[stateAbbr].goals) {
-      //  console.log(goal)
       if (goal.Target_Date_1 == targetDate1) {
         result.push(goal)
       }
@@ -92,7 +97,6 @@ class csvData {
     } = this
     let result = [];
     for (let goal of states[stateAbbr].goals) {
-      //  console.log(goal)
       if (goal.Target_Date_2 == targetDate2) {
         result.push(goal)
       }
@@ -119,7 +123,6 @@ class csvData {
         result.push(state)
       }
     }
-    //  console.log(result)
     return result
   }
   targetDate2Search = (targetDate2) => {
@@ -138,7 +141,6 @@ class csvData {
         result.push(state)
       }
     }
-    //   console.log(result)
     return result
   }
 }
@@ -146,7 +148,6 @@ class csvData {
 //example of how to use the code, make sure everything you write is contained in the .then or it will likely break. The file import of the csv is asynchonous
 const csv = new csvData()
 csv.parseData().then(() => {
-
   // this sets the css and list of states for the target dates.  no clicking is required to fill out this info b/c it's hidden by css until the classes change later
   for (let abbr in csv.states) {
     const data = csv.targetInfoSearch(abbr, "2025-2030")
@@ -336,7 +337,6 @@ csv.parseData().then(() => {
   $("#map-svg .default-state").on("click", function (event) {
     window.clicked_state = [this.id];
     sector = window.clicked_sector
-    console.log(sector)
     set_state_active(window.clicked_state);
     if ( !sector || sector == 'hover_post' || sector == 'hover_2030' || sector == 'hover_about') {
       $("#about-tab").css("display", "block");
@@ -395,7 +395,6 @@ csv.parseData().then(() => {
   $("#sector-tabs li").on("click", function (event) {
     sector = $(this).attr("class");
     window.clicked_sector = sector;
-    console.log(sector);
     $("#sector-tabs li").removeClass("active-tab");
     if (sector == "hover_about") {
       $('#no-results').hide()
