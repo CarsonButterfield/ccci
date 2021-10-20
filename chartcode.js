@@ -1,32 +1,58 @@
 let stateCount = 0
-console.log('beep boop')
 const sortedCarbonData = {}
 let graphInterval;
 fetch('https://datas.carbonmonitor.org/API/downloadFullDataset.php?source=carbon_us')
     .then(res => res.text())
-    .then(data => {
+    .then(async data => {
         Papa.parse(data, {
             header: true,
             dynamicTyping: true,
             complete: (results) => {
-                results.data.forEach(({
-                    state,
-                    sector,
-                    ...data
-                }) => {
-                    // console.log(state, sector, data)
-                    if (sortedCarbonData[state]) {
-                        if (sortedCarbonData[state][sector]) {
-                            sortedCarbonData[state][sector].push(data)
+                console.log(results)
+                for(let i = 0; i < results.data.length; i++) {
+                    if (sortedCarbonData[results.data[i].state]) {
+                        if (sortedCarbonData[results.data[i].state][results.data[i].sector]) {
+                            sortedCarbonData[results.data[i].state][results.data[i].sector].push({
+                                date: results.data[i].date,
+                                timestamp: results.data[i].timestamp,
+                                value: results.data[i].value,
+                            })
                         } else {
-                            sortedCarbonData[state][sector] = [data]
+                            sortedCarbonData[results.data[i].state][results.data[i].sector] = [{
+                                date: results.data[i].date,
+                                timestamp: results.data[i].timestamp,
+                                value: results.data[i].value,
+                            }]
                         }
                     } else {
-                        sortedCarbonData[state] = {
-                            [sector]: [data]
+                        sortedCarbonData[results.data[i].state] = {
+                            [results.data[i].sector]: [{
+                                date: results.data[i].date,
+                                timestamp: results.data[i].timestamp,
+                                value: results.data[i].value,
+                            }]
                         }
                     }
-                })
+                }
+                // results.data.forEach(({
+                //     state,
+                //     sector,
+                //     ...data
+                // }) => {
+                //     // console.log(state, sector, data)
+                //     if (sortedCarbonData[state]) {
+                //         if (sortedCarbonData[state][sector]) {
+                //             sortedCarbonData[state][sector].push(data)
+                //         } else {
+                //             sortedCarbonData[state][sector] = [data]
+                //         }
+                //     } else {
+                //         sortedCarbonData[state] = {
+                //             [sector]: [data]
+                //         }
+                //     }
+                // })
+                console.log(sortedCarbonData)
             }
         })
     })
@@ -42,7 +68,7 @@ const awaitChart = state => {
     },500)
 }
 
-const generateStateChart = (state) => {
+const generateStateChart = async (state) => {
     const dataSeries = []
     for(field in sortedCarbonData[state]){
         dataSeries.push({
@@ -54,7 +80,6 @@ const generateStateChart = (state) => {
             })
         })
     }
-    console.log(dataSeries.length)
     if(dataSeries.length > 0){
         $('body').append(`<figure class="highcharts-figure"> <div id="${state}"></div></figure>`)
         Highcharts.chart(`carbon-graph`, {
