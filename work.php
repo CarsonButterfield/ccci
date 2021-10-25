@@ -11,7 +11,7 @@
  
  <div id="maptop">
 <h2 class="center">STATES' CLIMATE ACTION MAP</h2>
-<p class="center blue">Use this map to see states with near- and long-term greenhouse gas (GHG) emission reduction targets and sectoral policy actions.</p>
+<p class="center blue">Use this map to see states with near- and long-term greenhouse gas (GHG) emissions reduction targets and sectoral policy actions.</p>
 </div>
 <div id="climate-action-map-legend">
 	<p>Click on the goals or policies to view the relevant states highlighted on the map.</p>
@@ -90,12 +90,12 @@ Long-term: post 2030</h3>
 <ul id="sector-tabs" style="display: none"><li class="hover_about"><p>GHG Emissions and Targets </p></li><li class="hover_energy"><p>Energy Supply</p></li><li class="hover_transportation"><p>Transportation</p></li><li class="hover_industry"><p>Industry</p></li><li class="hover_building"><p>Buildings</p></li><li  id="nature-tab" class="hover_natural"><p>Natural and Working Lands</p></li><li class="hover_cross"><p>Cross-sector</p></li></ul>
 <h3 id="no-results">No data currently available.</h3>
 <div id="about-tab">
-<div class="graph-title"><h3 class="graph-title-text">GREENHOUSE GAS EMISSION REDUCTION TARGET</h3></div>
+<div class="graph-title"><h3 class="graph-title-text">GREENHOUSE GAS EMISSIONS REDUCTION TARGET</h3></div>
 	<h3 id="about-content"></h3>
 	<div class="gray-line"></div>
 	<div class="graph-title"><h3 class="graph-title-text">CARBON EMISSIONS BY SECTOR</h3>
 </div>
-<p id="carbon-text">Real-time emissions data provided by Carbon Monitor, an initiative providing science-based carbon dioxide estimates</p>
+<p id="carbon-text">Real-time emissions data provided by Carbon Monitor, an initiative providing science-based carbon dioxide estimates.</p>
 <figure class="highcharts-figure"> <div id="carbon-graph"></div></figure>
 <footer id="carbon-source">Source: US Carbon Monitor </footer>
 </div>
@@ -127,7 +127,7 @@ Long-term: post 2030</h3>
 <b>Natural &amp; Working Lands, Agriculture, and Forestry: </b>Major initiatives, policies, plans, and programs for land use planning; agriculture; forestry.
 </p>
 <p id="cross_sector_content">
-<b>Cross-sector: </b>GHG emission reduction targets; policies which apply across sectors; and general climate policies such as California’s economy-wide cap-and-trade program.
+<b>Cross-sector: </b>GHG emissions reduction targets; policies which apply across sectors; and general climate policies such as California’s economy-wide cap-and-trade program.
 </p>
 </div>
 </div>

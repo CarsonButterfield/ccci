@@ -19,7 +19,7 @@ class csvData {
     this.mapSheetOne(sheet1);
     this.mapSheetTwo(sheet2);
   }
-  mapSheetOne = (results) => {
+  async mapSheetOne(results){
     const {
       states
     } = this
@@ -44,7 +44,7 @@ class csvData {
       }
     })
   }
-  mapSheetTwo = (results) => {
+  async mapSheetTwo(results){
     for (let state of results.data) {
       if(this.states[state.State_Abbr]){
         this.states[state.State_Abbr].goals.push(state)
@@ -220,6 +220,7 @@ csv.parseData().then(() => {
   }
 
   function set_sector_active(sector, sector2) {
+    console.log({sector, sector2});
     $("#climate-action-map-wrapper input + label").css("color", "#46535E");
     $("#climate-action-map-wrapper input#" + sector + "+ label").css("color", "#C4820E");
 
@@ -287,9 +288,7 @@ csv.parseData().then(() => {
     $("#state-policies #policies-name").replaceWith('<h2 id="policies-name">' + csv.states[state]['goals'][0]['State_Name'] + '</h2>');
     $("#about-content").html("<div>" + date_1 + "</div>" + "<div>" + date_2 + "</div>");
     $("#about-tab").css("display", "none");
-    $("#sector-tabs li").removeClass("active-tab");
     $("#sector-tabs").css('display', 'flex');
-    $('#no-results').hide()
   }
 
   // this sets the css and list of states for the sectors.  no clicking is required to fill out this info b/c it's hidden by css until the classes change later
@@ -338,16 +337,25 @@ csv.parseData().then(() => {
     window.clicked_state = [this.id];
     sector = window.clicked_sector
     set_state_active(window.clicked_state);
-    if ( !sector || sector == 'hover_post' || sector == 'hover_2030' || sector == 'hover_about') {
-      $("#about-tab").css("display", "block");
-    } else {
-      $("#about-tab").css("display", "none");
+    if (sector == 'hover_post' || sector == 'hover_2030') {
+      $("#sector-tabs li").removeClass("active-tab");
+      $('#no-results').hide()
+      $("#state-policies #policies-table").hide();
+      $("#climate-action-map-wrapper input + label").css("color", "#46535E");
     }
     if(sector){
     var policies = csv.states[window.clicked_state][sector];
     build_table(policies);
   }
-  about_tab([this.id]);}
+  about_tab(this.id);
+  if(sector == null || sector == 'hover_about'){
+    $('.hover_about').addClass('active-tab');
+    $('#no-results').hide()
+    $("#state-policies #policies-table").hide();
+    $("#climate-action-map-wrapper input + label").css("color", "#46535E");
+    $("#about-tab").css("display", "block");
+    }
+  }
   )
 
   $("#climate-action-map-legend .legend_radios").on("click", function (event) {
@@ -378,7 +386,6 @@ csv.parseData().then(() => {
     // if they click on a state while the target date tabs are active
     $("#map-svg .default-state").on("click", function (event) {
       $("#climate-action-map-content").removeClass();
-      $("#sector-tabs li.hover_about").removeClass("active-tab");
       // if they click on a state after hitting reset
       if (sector == 'hover_reset') {
         $("#about-tab").css("display", "block");
@@ -421,5 +428,6 @@ csv.parseData().then(() => {
     var policies = csv.states[window.clicked_state][sector];
     build_table(policies);
     about_tab([this.id]);
+    set_sector_active(sector, window.clicked_sector);
   });
 })

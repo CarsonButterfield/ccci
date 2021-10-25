@@ -8,7 +8,6 @@ fetch('https://datas.carbonmonitor.org/API/downloadFullDataset.php?source=carbon
             header: true,
             dynamicTyping: true,
             complete: (results) => {
-                console.log(results)
                 for(let i = 0; i < results.data.length; i++) {
                     if (sortedCarbonData[results.data[i].state]) {
                         if (sortedCarbonData[results.data[i].state][results.data[i].sector]) {
@@ -34,25 +33,6 @@ fetch('https://datas.carbonmonitor.org/API/downloadFullDataset.php?source=carbon
                         }
                     }
                 }
-                // results.data.forEach(({
-                //     state,
-                //     sector,
-                //     ...data
-                // }) => {
-                //     // console.log(state, sector, data)
-                //     if (sortedCarbonData[state]) {
-                //         if (sortedCarbonData[state][sector]) {
-                //             sortedCarbonData[state][sector].push(data)
-                //         } else {
-                //             sortedCarbonData[state][sector] = [data]
-                //         }
-                //     } else {
-                //         sortedCarbonData[state] = {
-                //             [sector]: [data]
-                //         }
-                //     }
-                // })
-                console.log(sortedCarbonData)
             }
         })
     })
@@ -81,7 +61,7 @@ const generateStateChart = async (state) => {
         })
     }
     if(dataSeries.length > 0){
-        $('body').append(`<figure class="highcharts-figure"> <div id="${state}"></div></figure>`)
+
         Highcharts.chart(`carbon-graph`, {
     
             title: {
