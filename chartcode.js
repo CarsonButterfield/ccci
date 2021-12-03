@@ -41,14 +41,12 @@ const awaitChart = state => {
     clearInterval(graphInterval)
     graphInterval = setInterval(() => {
     if(sortedCarbonData[state]) {
-        console.log(sortedCarbonData[state])
         $('.lds-ring').remove()
         clearInterval(graphInterval)
         generateStateChart(state)
     }
     },500)
 }
-console.log('beep')
 const generateStateChart = async (state) => {
     const dataSeries = []
     for(field in sortedCarbonData[state]){
@@ -62,7 +60,6 @@ const generateStateChart = async (state) => {
             })
         })
     }
-    console.log(dataSeries)
     if(dataSeries.length > 0){
 
         Highcharts.chart(`carbon-graph`, {
